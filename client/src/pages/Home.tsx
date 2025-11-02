@@ -43,20 +43,20 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-gray-800 mt-16 bg-white dark:bg-gray-900 transition-colors">
+      <footer className="border-t border-border mt-16 bg-background transition-colors">
         <div className="container py-8">
           <div className="flex items-center justify-between">
             {/* Privacy Link */}
             <a
               href="/privacy-terms"
-              className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Privacy and terms
             </a>
             
             {/* Powered by */}
             <div className="text-center">
-              <a href="https://studiodrewskii.com" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 inline-flex items-center gap-1 transition-colors">
+              <a href="https://studiodrewskii.com" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground inline-flex items-center gap-1 transition-colors">
                 Powered by <span className="font-semibold">Studio Drewskii</span>
               </a>
             </div>
@@ -67,7 +67,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/andreasmichailidis/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@ export default function Home() {
                 href="https://www.youtube.com/@studiodrewskii"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="YouTube"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -89,7 +89,7 @@ export default function Home() {
                 href="https://t.me/drewskii"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Telegram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -100,7 +100,7 @@ export default function Home() {
                 href="https://www.skool.com/ai-design-club"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Skool"
               >
                 <svg className="w-5 h-5" viewBox="0 0 121 94" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +112,7 @@ export default function Home() {
                 href="https://contra.com/drewskii"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Contra"
               >
                 <svg className="w-5 h-5" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

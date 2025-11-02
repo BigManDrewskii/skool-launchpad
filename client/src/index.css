@@ -79,68 +79,51 @@
 }
 
 .dark {
-  --background: 80 5% 8%;        /* Deep olive-black */
-  --foreground: 60 5% 95%;       /* Warm off-white */
-  --card: 80 8% 12%;             /* Dark olive card */
-  --card-foreground: 60 5% 95%;  /* Warm off-white */
-  --popover: 80 10% 10%;         /* Darker olive popover */
-  --popover-foreground: 60 5% 95%; /* Warm off-white */
-  --primary: 45 93% 58%;         /* Keep yellow accent */
-  --primary-foreground: 0 0% 10%; /* Black text on yellow */
-  --secondary: 80 8% 15%;        /* Medium olive */
-  --secondary-foreground: 60 5% 95%; /* Warm off-white */
-  --muted: 80 8% 15%;            /* Medium olive */
-  --muted-foreground: 60 5% 65%; /* Muted warm gray */
-  --accent: 80 8% 15%;           /* Medium olive */
-  --accent-foreground: 60 5% 95%; /* Warm off-white */
-  --destructive: 0 84% 60%;      /* Keep red */
-  --destructive-foreground: 0 0% 95%; /* White */
-  --border: 80 8% 20%;           /* Olive border */
-  --input: 80 8% 20%;            /* Olive input */
-  --ring: 60 5% 40%;             /* Muted olive ring */
-  --sidebar: 0 0% 14%;
-  --sidebar-foreground: 0 0% 95%;
-  --sidebar-primary: 45 93% 58%;
-  --sidebar-primary-foreground: 0 0% 10%;
-  --sidebar-accent: 0 0% 18%;
-  --sidebar-accent-foreground: 0 0% 95%;
-  --sidebar-border: 0 0% 24%;
-  --sidebar-ring: 0 0% 40%;
-}
-
-.dark {
-  --primary: 30 100% 65%;
-  --primary-foreground: 240 10% 3.9%;
-  --sidebar-primary: 30 100% 65%;
-  --sidebar-primary-foreground: 240 10% 3.9%;
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --card: 240 10% 8%;
-  --card-foreground: 0 0% 98%;
-  --popover: 240 10% 8%;
-  --popover-foreground: 0 0% 98%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 30 100% 65%;
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: 240 10% 8%;
-  --sidebar-foreground: 0 0% 98%;
-  --sidebar-accent: 240 3.7% 15.9%;
-  --sidebar-accent-foreground: 0 0% 98%;
-  --sidebar-border: 240 3.7% 15.9%;
-  --sidebar-ring: 30 100% 65%;
+  /* Primary Theme Colors */
+  --background: 70 20% 8%;           /* hsl(70 20% 8%) */
+  --foreground: 210 40% 98%;         /* hsl(210 40% 98%) */
+  --primary: 0 0% 98%;               /* hsl(0 0% 98%) */
+  --primary-foreground: 210 10% 10%; /* hsl(210 10% 10%) */
+  
+  /* Secondary & Accent Colors */
+  --secondary: 70 15% 16%;           /* hsl(70 15% 16%) */
+  --secondary-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
+  --accent: 70 15% 16%;              /* hsl(70 15% 16%) */
+  --accent-foreground: 210 40% 98%;  /* hsl(210 40% 98%) */
+  
+  /* UI Component Colors */
+  --card: 70 20% 8%;                 /* hsl(70 20% 8%) - same as background */
+  --card-foreground: 210 40% 98%;    /* hsl(210 40% 98%) */
+  --popover: 70 20% 8%;              /* hsl(70 20% 8%) */
+  --popover-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
+  --muted: 70 15% 16%;               /* hsl(70 15% 16%) */
+  --muted-foreground: 210 20% 65%;   /* hsl(210 20% 65%) */
+  
+  /* Utility & Form Colors */
+  --border: 70 15% 20%;              /* hsl(70 15% 20%) */
+  --input: 70 15% 20%;               /* hsl(70 15% 20%) */
+  --ring: 0 0% 98%;                  /* hsl(0 0% 98%) */
+  
+  /* Status & Feedback Colors */
+  --destructive: 0 62.8% 30.6%;      /* hsl(0 62.8% 30.6%) */
+  --destructive-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
+  
+  /* Chart & Visualization Colors */
+  --chart-1: 70 30% 55%;             /* hsl(70 30% 55%) */
+  --chart-2: 90 40% 50%;             /* hsl(90 40% 50%) */
+  --chart-3: 110 50% 55%;            /* hsl(110 50% 55%) */
+  --chart-4: 130 60% 60%;            /* hsl(130 60% 60%) */
+  --chart-5: 160 70% 65%;            /* hsl(160 70% 65%) */
+  
+  /* Sidebar & Navigation Colors */
+  --sidebar: 70 20% 8%;              /* hsl(70 20% 8%) */
+  --sidebar-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
+  --sidebar-primary: 0 0% 98%;       /* hsl(0 0% 98%) */
+  --sidebar-primary-foreground: 210 10% 10%; /* hsl(210 10% 10%) */
+  --sidebar-accent: 70 15% 16%;      /* hsl(70 15% 16%) */
+  --sidebar-accent-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
+  --sidebar-border: 70 15% 20%;      /* hsl(70 15% 20%) */
+  --sidebar-ring: 0 0% 98%;          /* hsl(0 0% 98%) */
 }
 
 @layer base {

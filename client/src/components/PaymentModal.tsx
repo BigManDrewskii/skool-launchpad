@@ -115,39 +115,39 @@ export default function PaymentModal({ isOpen, onClose, paymentType }: PaymentMo
       onClick={onClose}
     >
       <div 
-        className="relative bg-white dark:bg-gray-900 rounded-lg shadow-xl max-w-md w-full mx-4 p-6"
+        className="relative bg-card rounded-lg shadow-xl max-w-md w-full mx-4 p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+          className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
         >
           <XMarkIcon className="w-6 h-6" />
         </button>
 
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl font-bold text-card-foreground mb-4">
             {paymentType === "card" ? "Card Payment" : "Crypto Payment"}
           </h2>
           
           {paymentType === "card" ? (
             <div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Loading secure checkout...
               </p>
               <div className="animate-pulse">
-                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mx-auto mb-2"></div>
-                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mx-auto"></div>
+                <div className="h-4 bg-muted rounded w-3/4 mx-auto mb-2"></div>
+                <div className="h-4 bg-muted rounded w-1/2 mx-auto"></div>
               </div>
             </div>
           ) : (
             <div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Creating crypto payment invoice...
               </p>
               <div className="animate-pulse">
-                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mx-auto mb-2"></div>
-                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mx-auto"></div>
+                <div className="h-4 bg-muted rounded w-3/4 mx-auto mb-2"></div>
+                <div className="h-4 bg-muted rounded w-1/2 mx-auto"></div>
               </div>
             </div>
           )}

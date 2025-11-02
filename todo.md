@@ -201,4 +201,33 @@
 - [ ] Test Coinbase Commerce flow - Requires API key from user
 - [x] Update PAYMENT_SETUP.md with Coinbase Commerce instructions
 - [x] Push to GitHub - Will be included in checkpoint
-- [ ] Save checkpoint
+- [x] Save checkpoint
+
+## Phase 22: Dark Theme Update with Olive-Black Aesthetic
+- [x] Update CSS variables in index.css with exact color palette from user
+- [ ] Verify all components use semantic color classes
+- [ ] Test dark theme on all page sections
+- [ ] Test dark theme on FAQ accordion
+- [ ] Test dark theme on payment buttons
+- [ ] Test dark theme on modal components
+- [ ] Save checkpoint with updated dark theme
+- [ ] Push to GitHub
+
+
+## Phase 23: Comprehensive Dark Theme Application
+- [ ] Audit all components for dark theme consistency
+- [x] Update Navigation component - search bar, theme toggle, Book a Call button
+- [x] Update VideoSection component - video container, thumbnails, metadata
+- [x] Update DescriptionSection component - headings, text, bullets, timeline, price, links
+- [x] Update CommunitySidebar component - card background, header, stats, bio, button
+- [x] Update Footer component - background, links, social icons
+- [x] Update PaymentModal component - overlay, background
+- [x] Update PaymentSuccess page - background, card, text, buttons
+- [x] Update PaymentCancelled page - background, card, text, buttons- [x] Test Navigation in dark mode
+- [x] Test VideoSection in dark mode
+- [x] Test DescriptionSection in dark mode
+- [x] Test CommunitySidebar in dark mode
+- [x] Test Footer in dark mode
+- [x] Test PaymentModal in dark mode
+- [x] Test FAQ in dark mode
+- [x] Save checkpoint with complete dark theme

@@ -19,33 +19,33 @@ export default function DescriptionSection() {
   return (
     <div className="space-y-5">
       {/* Opening Statement */}
-      <p className="text-lg font-semibold text-gray-900 dark:text-white leading-relaxed">
+      <p className="text-lg font-semibold text-foreground leading-relaxed">
         Done-for-you branding, setup, and sales funnel. You bring the expertise. I build the machine.
       </p>
 
       {/* What's Inside Section */}
       <div className="space-y-4 pt-2">
-        <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
+        <h2 className="text-sm font-semibold text-foreground">
           What you get:
         </h2>
 
         <ul className="space-y-2.5">
-          <li className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-            <span className="text-gray-400 dark:text-gray-500 mt-0.5">•</span>
+          <li className="flex items-start gap-2 text-sm text-foreground/80">
+            <span className="text-muted-foreground mt-0.5">•</span>
             <div>
-              <span className="font-semibold text-gray-900 dark:text-white">The Brand:</span> Real logo, professional banner, clean color system
+              <span className="font-semibold text-foreground">The Brand:</span> Real logo, professional banner, clean color system
             </div>
           </li>
-          <li className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-            <span className="text-gray-400 dark:text-gray-500 mt-0.5">•</span>
+          <li className="flex items-start gap-2 text-sm text-foreground/80">
+            <span className="text-muted-foreground mt-0.5">•</span>
             <div>
-              <span className="font-semibold text-gray-900 dark:text-white">The Skool Setup:</span> Full group configuration, course structure, working onboarding
+              <span className="font-semibold text-foreground">The Skool Setup:</span> Full group configuration, course structure, working onboarding
             </div>
           </li>
-          <li className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-            <span className="text-gray-400 dark:text-gray-500 mt-0.5">•</span>
+          <li className="flex items-start gap-2 text-sm text-foreground/80">
+            <span className="text-muted-foreground mt-0.5">•</span>
             <div>
-              <span className="font-semibold text-gray-900 dark:text-white">The Sales Funnel:</span> Converting landing page and VSL script that sells
+              <span className="font-semibold text-foreground">The Sales Funnel:</span> Converting landing page and VSL script that sells
             </div>
           </li>
         </ul>
@@ -53,31 +53,31 @@ export default function DescriptionSection() {
 
       {/* The Process Section */}
       <div className="space-y-2.5 pt-2">
-        <div className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-          <ArrowRightIcon className="w-4 h-4 text-gray-400 dark:text-gray-500 mt-0.5 flex-shrink-0" />
+        <div className="flex items-start gap-2 text-sm text-foreground/80">
+          <ArrowRightIcon className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" />
           <div>
-            <span className="font-semibold text-gray-900 dark:text-white">Strategy Call:</span> 60 minutes to define the plan
+            <span className="font-semibold text-foreground">Strategy Call:</span> 60 minutes to define the plan
           </div>
         </div>
-        <div className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-          <ArrowRightIcon className="w-4 h-4 text-gray-400 dark:text-gray-500 mt-0.5 flex-shrink-0" />
+        <div className="flex items-start gap-2 text-sm text-foreground/80">
+          <ArrowRightIcon className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" />
           <div>
-            <span className="font-semibold text-gray-900 dark:text-white">I Build:</span> 9 days of focused execution
+            <span className="font-semibold text-foreground">I Build:</span> 9 days of focused execution
           </div>
         </div>
-        <div className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-          <ArrowRightIcon className="w-4 h-4 text-gray-400 dark:text-gray-500 mt-0.5 flex-shrink-0" />
+        <div className="flex items-start gap-2 text-sm text-foreground/80">
+          <ArrowRightIcon className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" />
           <div>
-            <span className="font-semibold text-gray-900 dark:text-white">You Launch:</span> Day 10, your community goes live
+            <span className="font-semibold text-foreground">You Launch:</span> Day 10, your community goes live
           </div>
         </div>
       </div>
 
       {/* Pricing */}
-      <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
-        <div className="text-3xl font-bold text-gray-900 dark:text-white">$2,997</div>
-        <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">One-time. No recurring fees.</div>
-        <p className="text-sm text-gray-600 dark:text-gray-400 mt-3">
+      <div className="pt-3 border-t border-border">
+        <div className="text-3xl font-bold text-foreground">$2,997</div>
+        <div className="text-sm text-muted-foreground mt-1">One-time. No recurring fees.</div>
+        <p className="text-sm text-muted-foreground mt-3">
           If your community is $97/month, you need 31 members to pay for this. You will get more than 31 members if you are serious.
         </p>
       </div>
@@ -85,14 +85,14 @@ export default function DescriptionSection() {
       {/* CTA Link */}
       <a
         href="#"
-        className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+        className="inline-block text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors"
       >
         Book a Strategy Call →
       </a>
 
       {/* Payment Buttons Section */}
       <div className="pt-4 space-y-3">
-        <div className="text-sm font-semibold text-gray-900 dark:text-white">
+        <div className="text-sm font-semibold text-foreground">
           Ready to launch? Choose your payment method:
         </div>
         
@@ -100,7 +100,7 @@ export default function DescriptionSection() {
           {/* Traditional Payment Button (Polar) */}
           <button
             onClick={handleCardPayment}
-            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors"
           >
             <CreditCardIcon className="w-5 h-5" />
             Pay with Card / Apple Pay
@@ -109,14 +109,14 @@ export default function DescriptionSection() {
           {/* Crypto Payment Button (Coinbase Commerce) */}
           <button
             onClick={handleCryptoPayment}
-            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 text-black dark:text-white font-semibold rounded-lg border-2 border-black dark:border-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-background text-foreground font-semibold rounded-lg border-2 border-primary hover:bg-accent transition-colors"
           >
             <CurrencyDollarIcon className="w-5 h-5" />
             Pay with Crypto
           </button>
         </div>
 
-        <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+        <p className="text-xs text-muted-foreground text-center">
           Secure payment processing • Crypto via Coinbase Commerce (non-custodial) • Apple Pay & Google Pay supported
         </p>
       </div>
