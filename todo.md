@@ -149,6 +149,39 @@
 - [x] Create FAQ component with accordion-style minimal design
 - [x] Add FAQ section to sidebar below main card
 - [x] Move "Powered by Studio Drewskii" from sidebar to footer
-- [ ] Ensure FAQ works in both light and dark themes
-- [ ] Test accordion interactions
+- [x] Ensure FAQ works in both light and dark themes
+- [x] Test accordion interactions
+- [x] Save checkpoint
+
+
+## Phase 20: Payment Integration
+- [x] Research Polar payment platform (traditional payments + Apple Pay)
+- [x] Research crypto payment gateways (NOWPayments recommended)
+- [ ] Create Polar account and get API credentials
+- [ ] Create NOWPayments account and get API credentials
+- [ ] Add payment button below "Book a Strategy Call" in DescriptionSection
+- [ ] Implement Polar embedded checkout integration
+- [ ] Implement NOWPayments invoice integration for crypto
+- [ ] Add payment method selection UI (card/Apple Pay vs crypto)
+- [ ] Configure webhook endpoints for payment confirmations
+- [ ] Test Polar checkout flow (sandbox mode)
+- [ ] Test NOWPayments checkout flow (sandbox mode)
+- [ ] Add success/failure redirect pages
+- [ ] Update userGuide.md with payment information
+- [ ] Test complete payment flow end-to-end
+- [ ] Save checkpoint with payment integration complete
+
+- [x] Install @polar-sh/checkout package
+- [x] Create PaymentModal component for both payment types
+- [x] Create PaymentSuccess page
+- [x] Create PaymentCancelled page
+- [x] Add payment routes to App.tsx
+- [x] Update DescriptionSection with payment buttons and modal integration
+- [x] Create PAYMENT_SETUP.md documentation
+- [ ] Add environment variables (VITE_POLAR_CHECKOUT_LINK, VITE_NOWPAYMENTS_API_KEY)
+- [ ] Test payment button clicks and modal display
+- [ ] Update PaymentModal with actual API credentials
+- [ ] Test Polar checkout flow
+- [ ] Test NOWPayments crypto flow
+- [x] Push to GitHub repository
 - [ ] Save checkpoint

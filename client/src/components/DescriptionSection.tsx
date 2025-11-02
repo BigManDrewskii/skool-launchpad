@@ -1,6 +1,21 @@
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, CreditCardIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
+import PaymentModal from "./PaymentModal";
 
 export default function DescriptionSection() {
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [paymentType, setPaymentType] = useState<"card" | "crypto">("card");
+
+  const handleCardPayment = () => {
+    setPaymentType("card");
+    setShowPaymentModal(true);
+  };
+
+  const handleCryptoPayment = () => {
+    setPaymentType("crypto");
+    setShowPaymentModal(true);
+  };
+
   return (
     <div className="space-y-5">
       {/* Opening Statement */}
@@ -74,6 +89,44 @@ export default function DescriptionSection() {
       >
         Book a Strategy Call →
       </a>
+
+      {/* Payment Buttons Section */}
+      <div className="pt-4 space-y-3">
+        <div className="text-sm font-semibold text-gray-900 dark:text-white">
+          Ready to launch? Choose your payment method:
+        </div>
+        
+        <div className="flex flex-col sm:flex-row gap-3">
+          {/* Traditional Payment Button (Polar) */}
+          <button
+            onClick={handleCardPayment}
+            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+          >
+            <CreditCardIcon className="w-5 h-5" />
+            Pay with Card / Apple Pay
+          </button>
+
+          {/* Crypto Payment Button (NOWPayments) */}
+          <button
+            onClick={handleCryptoPayment}
+            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 text-black dark:text-white font-semibold rounded-lg border-2 border-black dark:border-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+          >
+            <CurrencyDollarIcon className="w-5 h-5" />
+            Pay with Crypto
+          </button>
+        </div>
+
+        <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+          Secure payment processing • 300+ cryptocurrencies accepted • Apple Pay & Google Pay supported
+        </p>
+      </div>
+
+      {/* Payment Modal */}
+      <PaymentModal
+        isOpen={showPaymentModal}
+        onClose={() => setShowPaymentModal(false)}
+        paymentType={paymentType}
+      />
     </div>
   );
 }
