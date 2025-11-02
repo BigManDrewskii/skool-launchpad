@@ -79,25 +79,25 @@
 }
 
 .dark {
-  --background: 0 0% 10%;
-  --foreground: 0 0% 95%;
-  --card: 0 0% 14%;
-  --card-foreground: 0 0% 95%;
-  --popover: 0 0% 14%;
-  --popover-foreground: 0 0% 95%;
-  --primary: 45 93% 58%;
-  --primary-foreground: 0 0% 10%;
-  --secondary: 0 0% 18%;
-  --secondary-foreground: 0 0% 95%;
-  --muted: 0 0% 18%;
-  --muted-foreground: 0 0% 60%;
-  --accent: 0 0% 18%;
-  --accent-foreground: 0 0% 95%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 95%;
-  --border: 0 0% 24%;
-  --input: 0 0% 24%;
-  --ring: 0 0% 40%;
+  --background: 80 5% 8%;        /* Deep olive-black */
+  --foreground: 60 5% 95%;       /* Warm off-white */
+  --card: 80 8% 12%;             /* Dark olive card */
+  --card-foreground: 60 5% 95%;  /* Warm off-white */
+  --popover: 80 10% 10%;         /* Darker olive popover */
+  --popover-foreground: 60 5% 95%; /* Warm off-white */
+  --primary: 45 93% 58%;         /* Keep yellow accent */
+  --primary-foreground: 0 0% 10%; /* Black text on yellow */
+  --secondary: 80 8% 15%;        /* Medium olive */
+  --secondary-foreground: 60 5% 95%; /* Warm off-white */
+  --muted: 80 8% 15%;            /* Medium olive */
+  --muted-foreground: 60 5% 65%; /* Muted warm gray */
+  --accent: 80 8% 15%;           /* Medium olive */
+  --accent-foreground: 60 5% 95%; /* Warm off-white */
+  --destructive: 0 84% 60%;      /* Keep red */
+  --destructive-foreground: 0 0% 95%; /* White */
+  --border: 80 8% 20%;           /* Olive border */
+  --input: 80 8% 20%;            /* Olive input */
+  --ring: 60 5% 40%;             /* Muted olive ring */
   --sidebar: 0 0% 14%;
   --sidebar-foreground: 0 0% 95%;
   --sidebar-primary: 45 93% 58%;

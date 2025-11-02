@@ -108,3 +108,10 @@
 - [x] Test light theme - verify all elements look correct
 - [x] Test dark theme - verify all elements look correct with proper contrast
 - [x] Test theme toggle - ensure smooth transition between themes
+
+## Phase 14: Dark Olive/Black Theme Refinement
+- [x] Update dark theme color palette to dark olive/black tones in index.css
+- [x] Replace gray backgrounds with olive-black shades
+- [x] Make SVG logo turn white in dark mode
+- [x] Test dark olive theme for proper contrast
+- [ ] Save final checkpoint

@@ -83,7 +83,7 @@ export default function Navigation() {
             <img
               src="/skool-launchpad-logo.svg"
               alt="Skool Launchpad"
-              className="h-6"
+              className="h-6 dark:invert dark:brightness-0 dark:contrast-200"
             />
           </div>
 
