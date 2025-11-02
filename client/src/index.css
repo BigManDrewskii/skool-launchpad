@@ -4,10 +4,13 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Radius */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -43,87 +46,78 @@
 }
 
 :root {
-  --primary: 45 93% 58%;
-  --primary-foreground: 0 0% 0%;
-  --sidebar-primary: 45 93% 58%;
-  --sidebar-primary-foreground: 0 0% 0%;
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.5rem;
-  --background: 0 0% 96%;
-  --foreground: 0 0% 10%;
+  /* Base radius */
+  --radius: 0.4rem;
+
+  /* Light Mode Colors - Converted from hex to HSL */
+  --background: 0 0% 100%;
+  --foreground: 222 47.4% 11.2%;
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 10%;
+  --card-foreground: 222 47.4% 11.2%;
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 10%;
-  --secondary: 0 0% 96%;
-  --secondary-foreground: 0 0% 10%;
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 42%;
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 10%;
-  --destructive: 0 84% 60%;
+  --popover-foreground: 222 47.4% 11.2%;
+  --primary: 204 9.8% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 60 9.8% 90%;
+  --secondary-foreground: 222 47.4% 11.2%;
+  --muted: 60 9.8% 90%;
+  --muted-foreground: 215 16.3% 46.9%;
+  --accent: 60 9.8% 90%;
+  --accent-foreground: 222 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
-  --border: 0 0% 90%;
-  --input: 0 0% 81%;
-  --ring: 0 0% 63%;
-  --sidebar: 0 0% 100%;
-  --sidebar-foreground: 0 0% 10%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 10%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 63%;
+  --border: 60 9.8% 80%;
+  --input: 60 9.8% 80%;
+  --ring: 204 9.8% 10%;
+  --chart-1: 70 30.3% 34.9%;
+  --chart-2: 90 40.2% 40%;
+  --chart-3: 110 50.2% 44.9%;
+  --chart-4: 130 60% 50%;
+  --chart-5: 150 70.3% 55.1%;
+  --sidebar: 210 20% 98%;
+  --sidebar-foreground: 222 47.4% 11.2%;
+  --sidebar-primary: 204 9.8% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 60 9.8% 90%;
+  --sidebar-accent-foreground: 222 47.4% 11.2%;
+  --sidebar-border: 60 9.8% 80%;
+  --sidebar-ring: 204 9.8% 10%;
 }
 
 .dark {
-  /* Primary Theme Colors */
-  --background: 70 20% 8%;           /* hsl(70 20% 8%) */
-  --foreground: 210 40% 98%;         /* hsl(210 40% 98%) */
-  --primary: 0 0% 98%;               /* hsl(0 0% 98%) */
-  --primary-foreground: 210 10% 10%; /* hsl(210 10% 10%) */
-  
-  /* Secondary & Accent Colors */
-  --secondary: 70 15% 16%;           /* hsl(70 15% 16%) */
-  --secondary-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
-  --accent: 70 15% 16%;              /* hsl(70 15% 16%) */
-  --accent-foreground: 210 40% 98%;  /* hsl(210 40% 98%) */
-  
-  /* UI Component Colors */
-  --card: 70 20% 8%;                 /* hsl(70 20% 8%) - same as background */
-  --card-foreground: 210 40% 98%;    /* hsl(210 40% 98%) */
-  --popover: 70 20% 8%;              /* hsl(70 20% 8%) */
-  --popover-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
-  --muted: 70 15% 16%;               /* hsl(70 15% 16%) */
-  --muted-foreground: 210 20% 65%;   /* hsl(210 20% 65%) */
-  
-  /* Utility & Form Colors */
-  --border: 70 15% 20%;              /* hsl(70 15% 20%) */
-  --input: 70 15% 20%;               /* hsl(70 15% 20%) */
-  --ring: 0 0% 98%;                  /* hsl(0 0% 98%) */
-  
-  /* Status & Feedback Colors */
-  --destructive: 0 62.8% 30.6%;      /* hsl(0 62.8% 30.6%) */
-  --destructive-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
-  
-  /* Chart & Visualization Colors */
-  --chart-1: 70 30% 55%;             /* hsl(70 30% 55%) */
-  --chart-2: 90 40% 50%;             /* hsl(90 40% 50%) */
-  --chart-3: 110 50% 55%;            /* hsl(110 50% 55%) */
-  --chart-4: 130 60% 60%;            /* hsl(130 60% 60%) */
-  --chart-5: 160 70% 65%;            /* hsl(160 70% 65%) */
-  
-  /* Sidebar & Navigation Colors */
-  --sidebar: 70 20% 8%;              /* hsl(70 20% 8%) */
-  --sidebar-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
-  --sidebar-primary: 0 0% 98%;       /* hsl(0 0% 98%) */
-  --sidebar-primary-foreground: 210 10% 10%; /* hsl(210 10% 10%) */
-  --sidebar-accent: 70 15% 16%;      /* hsl(70 15% 16%) */
-  --sidebar-accent-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
-  --sidebar-border: 70 15% 20%;      /* hsl(70 15% 20%) */
-  --sidebar-ring: 0 0% 98%;          /* hsl(0 0% 98%) */
+  /* Dark Mode Colors - Converted from hex to HSL */
+  --background: 68 20% 7.8%;
+  --foreground: 210 40% 98%;
+  --card: 68 20% 7.8%;
+  --card-foreground: 210 40% 98%;
+  --popover: 68 20% 7.8%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 204 9.8% 10%;
+  --secondary: 71 14.3% 15.1%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 71 14.3% 15.1%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 71 14.3% 15.1%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 71 15.7% 20%;
+  --input: 71 15.7% 20%;
+  --ring: 0 0% 98%;
+  --chart-1: 70 30.1% 55.1%;
+  --chart-2: 90 40.2% 50.2%;
+  --chart-3: 110 50.2% 55.1%;
+  --chart-4: 130 59.8% 60%;
+  --chart-5: 150 69.8% 64.9%;
+  --sidebar: 68 20% 7.8%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-primary: 0 0% 98%;
+  --sidebar-primary-foreground: 204 9.8% 10%;
+  --sidebar-accent: 71 14.3% 15.1%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 71 15.7% 20%;
+  --sidebar-ring: 0 0% 98%;
 }
 
 @layer base {
@@ -148,43 +142,22 @@
 
 @layer components {
   /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
+   * Container
+   * Auto-centered with responsive padding
    */
   .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1280px;
   }
+}
 
+@layer utilities {
+  /**
+   * Flex utilities with min-width/height 0
+   * Prevents flex items from overflowing
+   */
   .flex {
-    min-height: 0;
     min-width: 0;
-  }
-
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
+    min-height: 0;
   }
 }

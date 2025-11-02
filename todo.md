@@ -231,3 +231,33 @@
 - [x] Test PaymentModal in dark mode
 - [x] Test FAQ in dark mode
 - [x] Save checkpoint with complete dark theme
+
+
+## Phase 24: Fix Dark Theme with Exact Color Values
+- [ ] Read current index.css dark theme variables
+- [ ] Extract exact color values from user's provided palette images
+- [ ] Update .dark CSS variables in index.css with exact HSL values:
+  - [ ] Background: hsl(70 20% 8%)
+  - [ ] Foreground: hsl(210 40% 98%)
+  - [ ] Primary: hsl(0 0% 98%)
+  - [ ] Primary Foreground: hsl(210 10% 10%)
+  - [ ] Secondary: hsl(70 15% 16%)
+  - [ ] Secondary Foreground: hsl(210 40% 98%)
+  - [ ] Accent: hsl(70 15% 16%)
+  - [ ] Accent Foreground: hsl(210 40% 98%)
+  - [ ] Card: hsl(70 20% 8%)
+  - [ ] Card Foreground: hsl(210 40% 98%)
+  - [ ] Popover: hsl(70 20% 8%)
+  - [ ] Popover Foreground: hsl(210 40% 98%)
+  - [ ] Muted: hsl(70 15% 16%)
+  - [ ] Muted Foreground: hsl(210 20.4% 85.1%)
+  - [ ] Border: hsl(70 15% 20%)
+  - [ ] Input: hsl(70 15% 20%)
+  - [ ] Ring: hsl(0 0% 98%)
+  - [ ] Destructive: hsl(0 62.8% 30.6%)
+  - [ ] Destructive Foreground: hsl(210 40% 98%)
+- [ ] Restart dev server to apply changes
+- [ ] Test dark theme appearance in browser
+- [ ] Verify all components display correctly
+- [ ] Save checkpoint with correct dark theme
+- [ ] Push to GitHub
