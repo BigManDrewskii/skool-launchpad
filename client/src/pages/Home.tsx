@@ -14,7 +14,7 @@ export default function Home() {
           {/* Main Content - Left Column */}
           <div className="lg:col-span-2 space-y-5">
             {/* Page Title */}
-            <h1 className="text-xl font-bold text-gray-900">AI Design Club</h1>
+      <h1 className="text-2xl font-bold text-gray-900 mb-6">The Skool Launchpad</h1>
 
             {/* Video Section */}
             <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">

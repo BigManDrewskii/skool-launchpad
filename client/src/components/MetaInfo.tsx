@@ -9,16 +9,16 @@ export default function MetaInfo() {
         <span>Public</span>
       </div>
 
-      {/* Members Badge */}
+      {/* Spots Badge */}
       <div className="flex items-center gap-1.5 text-gray-600">
         <UserGroupIcon className="w-4 h-4" />
-        <span>552 members</span>
+        <span>Limited spots</span>
       </div>
 
-      {/* Free Badge */}
+      {/* Price Badge */}
       <div className="flex items-center gap-1.5 text-gray-600">
         <TagIcon className="w-4 h-4" />
-        <span>Free</span>
+        <span>$2,997</span>
       </div>
 
       {/* Creator */}

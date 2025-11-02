@@ -34,7 +34,7 @@ export default function Navigation() {
                 />
               </svg>
             </div>
-            <span className="font-semibold text-gray-900 text-sm">AI Design Club</span>
+            <span className="font-semibold text-gray-900 text-sm">The Skool Launchpad</span>
           </div>
 
           {/* Search */}
