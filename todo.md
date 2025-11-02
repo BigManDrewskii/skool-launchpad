@@ -144,3 +144,11 @@
 - [x] Update footer link to navigate to new page
 - [x] Test page in both light and dark themes (both work perfectly)
 - [x] Save checkpoint
+
+## Phase 19: Add FAQ Section and Update Footer
+- [x] Create FAQ component with accordion-style minimal design
+- [x] Add FAQ section to sidebar below main card
+- [x] Move "Powered by Studio Drewskii" from sidebar to footer
+- [ ] Ensure FAQ works in both light and dark themes
+- [ ] Test accordion interactions
+- [ ] Save checkpoint

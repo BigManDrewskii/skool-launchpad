@@ -1,3 +1,5 @@
+import FAQ from "./FAQ";
+
 export default function CommunitySidebar() {
   const stats = [
     { label: "Brands Shipped", value: "100+" },
@@ -71,12 +73,8 @@ export default function CommunitySidebar() {
         </div>
       </div>
 
-      {/* Powered by */}
-      <div className="text-center">
-        <a href="#" className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 inline-flex items-center gap-1 transition-colors">
-          Powered by <span className="font-semibold">Studio Drewskii</span>
-        </a>
-      </div>
+      {/* FAQ Section */}
+      <FAQ />
     </div>
   );
 }

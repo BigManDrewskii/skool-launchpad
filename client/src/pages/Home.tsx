@@ -54,6 +54,13 @@ export default function Home() {
               Privacy and terms
             </a>
             
+            {/* Powered by */}
+            <div className="text-center">
+              <a href="https://studiodrewskii.com" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 inline-flex items-center gap-1 transition-colors">
+                Powered by <span className="font-semibold">Studio Drewskii</span>
+              </a>
+            </div>
+            
             {/* Social Links */}
             <div className="flex items-center gap-4">
               <a
