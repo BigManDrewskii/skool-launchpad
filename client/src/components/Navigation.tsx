@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { MagnifyingGlassIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { useTheme } from "@/contexts/ThemeContext";
 import {
   Popover,
   PopoverContent,
@@ -8,6 +9,7 @@ import {
 } from "@/components/ui/popover";
 
 export default function Navigation() {
+  const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [typedText, setTypedText] = useState("");
   const [currentPlatformIndex, setCurrentPlatformIndex] = useState(0);
@@ -73,7 +75,7 @@ export default function Navigation() {
   }, [typedText, isDeleting, currentPlatformIndex, platforms]);
 
   return (
-    <nav className="border-b border-gray-200 bg-white sticky top-0 z-50">
+    <nav className="border-b border-border bg-background sticky top-0 z-50">
       <div className="container">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
@@ -130,10 +132,24 @@ export default function Navigation() {
             </Popover>
           </div>
 
-          {/* Book a Call CTA */}
-          <Button className="bg-black text-white hover:bg-gray-800 h-9 px-6 text-sm font-medium transition-colors">
-            Book a Call
-          </Button>
+          {/* Theme Toggle & Book a Call */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => toggleTheme?.()}
+              className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              aria-label="Toggle theme"
+              type="button"
+            >
+              {theme === 'dark' ? (
+                <SunIcon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+              ) : (
+                <MoonIcon className="w-5 h-5 text-gray-600" />
+              )}
+            </button>
+            <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 h-9 px-6 text-sm font-medium transition-colors">
+              Book a Call
+            </Button>
+          </div>
         </div>
       </div>
     </nav>

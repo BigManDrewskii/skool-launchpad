@@ -6,7 +6,7 @@ import CommunitySidebar from "@/components/CommunitySidebar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Navigation />
 
       <main className="container py-6">
@@ -22,7 +22,7 @@ export default function Home() {
             </div>
 
             {/* Video Section */}
-            <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+            <div className="bg-card border border-border rounded-xl p-5 shadow-sm">
               <VideoSection />
             </div>
 
@@ -30,7 +30,7 @@ export default function Home() {
             <MetaInfo />
 
             {/* Description */}
-            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+            <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
               <DescriptionSection />
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 mt-16 bg-white">
+      <footer className="border-t border-border mt-16 bg-card">
         <div className="container py-8">
           <div className="flex items-center justify-between">
             {/* Privacy Link */}

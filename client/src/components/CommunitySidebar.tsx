@@ -8,7 +8,7 @@ export default function CommunitySidebar() {
   return (
     <div className="space-y-4">
       {/* Community Card */}
-      <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm">
         {/* Banner - Solid Black Background */}
         <div className="h-24 bg-black flex items-center justify-center">
           <div className="flex items-center gap-3">
