@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import {
   Popover,
   PopoverContent,
@@ -8,49 +9,68 @@ import {
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [typedText, setTypedText] = useState("");
+  const [currentPlatformIndex, setCurrentPlatformIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  const navItems = [
-    "Community",
-    "Classroom",
-    "Calendar",
-    "Members",
-    "Map",
-    "Leaderboards",
-    "About",
-  ];
-
+  const platforms = ["linkedin", "youtube", "telegram", "skool", "contra"];
+  
   const socialLinks = [
     {
-      name: "Skool",
-      description: "AI Design Club community",
-      url: "#",
-      icon: "🎓",
+      name: "LinkedIn",
+      description: "Professional network",
+      url: "https://www.linkedin.com/in/andreasmichailidis/",
     },
     {
       name: "YouTube",
       description: "Design experiments & workflows",
-      url: "#",
-      icon: "▶️",
-    },
-    {
-      name: "LinkedIn",
-      description: "Professional network",
-      url: "#",
-      icon: "💼",
+      url: "https://www.youtube.com/@studiodrewskii",
     },
     {
       name: "Telegram",
       description: "Direct messaging",
-      url: "#",
-      icon: "✈️",
+      url: "https://t.me/drewskii",
+    },
+    {
+      name: "Skool",
+      description: "AI Design Club community",
+      url: "https://www.skool.com/ai-design-club",
     },
     {
       name: "Contra",
       description: "Portfolio & projects",
-      url: "#",
-      icon: "💼",
+      url: "https://contra.com/drewskii",
     },
   ];
+
+  // Typing animation effect
+  useEffect(() => {
+    const currentPlatform = platforms[currentPlatformIndex];
+    const typingSpeed = isDeleting ? 50 : 100;
+    
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing forward
+        if (typedText.length < currentPlatform.length) {
+          setTypedText(currentPlatform.slice(0, typedText.length + 1));
+        } else {
+          // Pause before deleting
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        // Deleting
+        if (typedText.length > 0) {
+          setTypedText(currentPlatform.slice(0, typedText.length - 1));
+        } else {
+          // Move to next platform
+          setIsDeleting(false);
+          setCurrentPlatformIndex((prev) => (prev + 1) % platforms.length);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [typedText, isDeleting, currentPlatformIndex, platforms]);
 
   return (
     <nav className="border-b border-gray-200 bg-white sticky top-0 z-50">
@@ -65,26 +85,33 @@ export default function Navigation() {
             />
           </div>
 
-          {/* Social Links Popover (replacing search) */}
+          {/* Search Bar with Typing Animation */}
           <div className="flex-1 max-w-md mx-8">
             <Popover open={isOpen} onOpenChange={setIsOpen}>
               <PopoverTrigger asChild>
-                <button className="w-full px-4 py-2 text-sm text-left text-gray-500 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
-                  Connect with me →
+                <button className="w-full px-4 py-2 text-sm text-left bg-gray-50 border border-gray-200 rounded-md hover:bg-white hover:border-gray-300 transition-all flex items-center gap-2">
+                  <MagnifyingGlassIcon className="w-4 h-4 text-gray-400" />
+                  <span className="text-gray-900 font-mono">
+                    {typedText}
+                    <span className="animate-pulse">|</span>
+                  </span>
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="w-80 p-4" align="center">
-                <div className="space-y-3">
-                  <h3 className="font-semibold text-sm text-gray-900 mb-3">
-                    Let's Connect
+              <PopoverContent className="w-80 p-0 bg-white border border-gray-200 shadow-lg" align="center">
+                <div className="p-4 border-b border-gray-100">
+                  <h3 className="font-semibold text-sm text-gray-900">
+                    Connect with me
                   </h3>
+                </div>
+                <div className="p-2">
                   {socialLinks.map((link, index) => (
                     <a
                       key={index}
                       href={link.url}
-                      className="flex items-start gap-3 p-2 rounded-md hover:bg-gray-50 transition-colors group"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-3 p-3 rounded-md hover:bg-gray-50 transition-colors group"
                     >
-                      <span className="text-lg">{link.icon}</span>
                       <div className="flex-1">
                         <div className="font-medium text-sm text-gray-900 group-hover:text-black">
                           {link.name}
@@ -93,6 +120,9 @@ export default function Navigation() {
                           {link.description}
                         </div>
                       </div>
+                      <svg className="w-4 h-4 text-gray-400 group-hover:text-gray-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
                     </a>
                   ))}
                 </div>
@@ -104,22 +134,6 @@ export default function Navigation() {
           <Button className="bg-black text-white hover:bg-gray-800 h-9 px-6 text-sm font-medium transition-colors">
             Book a Call
           </Button>
-        </div>
-
-        {/* Navigation Tabs */}
-        <div className="flex items-center gap-6 -mb-px">
-          {navItems.map((item, index) => (
-            <button
-              key={item}
-              className={`py-3 px-1 border-b-2 transition-colors text-sm ${
-                index === navItems.length - 1
-                  ? "border-black text-gray-900 font-medium"
-                  : "border-transparent text-gray-500 hover:text-gray-900"
-              }`}
-            >
-              {item}
-            </button>
-          ))}
         </div>
       </div>
     </nav>
