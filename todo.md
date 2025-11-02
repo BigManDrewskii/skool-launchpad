@@ -84,3 +84,7 @@
 - [x] Add typing animation to search bar cycling through social platform names
 - [x] Remove navigation tabs section completely
 - [x] Add social links to footer from drewskii.info
+
+## Phase 11: Content Hierarchy Restructure
+- [x] Move "LAUNCH YOUR PROFESSIONAL SKOOL COMMUNITY IN 10 DAYS." headline next to "The Skool Launchpad" title
+- [x] Update card opening text to "Done-for-you branding, setup, and sales funnel. You bring the expertise. I build the machine."

@@ -13,8 +13,13 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Content - Left Column */}
           <div className="lg:col-span-2 space-y-5">
-            {/* Page Title */}
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">The Skool Launchpad</h1>
+            {/* Page Title with Headline */}
+            <div className="space-y-2">
+              <h1 className="text-2xl font-bold text-gray-900">The Skool Launchpad</h1>
+              <p className="text-lg font-semibold text-gray-700">
+                LAUNCH YOUR PROFESSIONAL SKOOL COMMUNITY IN 10 DAYS.
+              </p>
+            </div>
 
             {/* Video Section */}
             <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">

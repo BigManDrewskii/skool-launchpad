@@ -3,13 +3,8 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 export default function DescriptionSection() {
   return (
     <div className="space-y-5">
-      {/* Main Headline */}
-      <h1 className="text-2xl font-bold text-gray-900 leading-tight">
-        LAUNCH YOUR PROFESSIONAL SKOOL COMMUNITY IN 10 DAYS.
-      </h1>
-
-      {/* Subheadline */}
-      <p className="text-base text-gray-700 leading-relaxed">
+      {/* Opening Statement */}
+      <p className="text-lg font-semibold text-gray-900 leading-relaxed">
         Done-for-you branding, setup, and sales funnel. You bring the expertise. I build the machine.
       </p>
 
