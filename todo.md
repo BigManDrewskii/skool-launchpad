@@ -114,4 +114,11 @@
 - [x] Replace gray backgrounds with olive-black shades
 - [x] Make SVG logo turn white in dark mode
 - [x] Test dark olive theme for proper contrast
-- [ ] Save final checkpoint
+- [x] Save final checkpoint
+
+## Phase 15: Custom Social Icons
+- [x] Copy skoolicon.svg and contra-logo.svg to project public directory
+- [x] Update footer to use custom SVG icons for Skool and Contra
+- [x] Apply dark mode invert filter to make icons white in dark theme
+- [x] Test both light and dark themes (black in light, white in dark)
+- [x] Save checkpoint
