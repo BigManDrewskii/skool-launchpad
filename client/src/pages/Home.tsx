@@ -17,7 +17,7 @@ export default function Home() {
             <h1 className="text-xl font-bold text-gray-900">AI Design Club</h1>
 
             {/* Video Section */}
-            <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+            <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
               <VideoSection />
             </div>
 
@@ -25,7 +25,7 @@ export default function Home() {
             <MetaInfo />
 
             {/* Description */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
               <DescriptionSection />
             </div>
           </div>

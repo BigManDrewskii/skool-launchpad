@@ -1,19 +1,36 @@
 import { PlayIcon, BoltIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
+
+interface VideoThumbnail {
+  id: number;
+  thumbnail: string;
+  title: string;
+}
 
 export default function VideoSection() {
+  const videos: VideoThumbnail[] = [
+    { id: 1, thumbnail: "/video-thumbnail-1.webp", title: "Video 1" },
+    { id: 2, thumbnail: "/video-thumbnail-2.webp", title: "Video 2" },
+    { id: 3, thumbnail: "/video-thumbnail-3.webp", title: "Video 3" },
+    { id: 4, thumbnail: "/video-thumbnail-4.webp", title: "Video 4" },
+  ];
+
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+  const activeVideo = videos[activeVideoIndex];
+
   return (
     <div className="space-y-3">
       {/* Main Video Player */}
-      <div className="relative aspect-video bg-black rounded overflow-hidden">
+      <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
         <img 
-          src="/main-video-thumbnail.webp" 
-          alt="Main video"
+          src={activeVideo.thumbnail} 
+          alt={activeVideo.title}
           className="w-full h-full object-cover"
         />
         
         {/* Play Button Overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <button className="w-16 h-16 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-colors group">
+          <button className="w-16 h-16 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-all hover:scale-105">
             <PlayIcon className="w-8 h-8 text-gray-900 ml-1" />
           </button>
         </div>
@@ -35,44 +52,33 @@ export default function VideoSection() {
         </div>
       </div>
 
-      {/* Video Thumbnails */}
+      {/* Video Thumbnails Carousel */}
       <div className="flex gap-2">
-        <button className="relative flex-1 aspect-video rounded overflow-hidden border-2 border-black transition-all">
-          <img 
-            src="/video-thumbnail-1.webp" 
-            alt="Video 1"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <PlayIcon className="w-8 h-8 text-white/80" />
-          </div>
-        </button>
+        {videos.map((video, index) => (
+          <button
+            key={video.id}
+            onClick={() => setActiveVideoIndex(index)}
+            className={`relative flex-1 aspect-video rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
+              index === activeVideoIndex
+                ? "border-black"
+                : "border-gray-300 hover:border-gray-400"
+            }`}
+          >
+            <img 
+              src={video.thumbnail} 
+              alt={video.title}
+              className="w-full h-full object-cover"
+            />
+            {index === activeVideoIndex && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <PlayIcon className="w-8 h-8 text-white/80 drop-shadow-lg" />
+              </div>
+            )}
+          </button>
+        ))}
         
-        <button className="relative flex-1 aspect-video rounded overflow-hidden border-2 border-gray-300 hover:border-gray-400 transition-all">
-          <img 
-            src="/video-thumbnail-2.webp" 
-            alt="Video 2"
-            className="w-full h-full object-cover"
-          />
-        </button>
-        
-        <button className="relative flex-1 aspect-video rounded overflow-hidden border-2 border-gray-300 hover:border-gray-400 transition-all">
-          <img 
-            src="/video-thumbnail-3.webp" 
-            alt="Video 3"
-            className="w-full h-full object-cover"
-          />
-        </button>
-        
-        <button className="relative flex-1 aspect-video rounded overflow-hidden border-2 border-gray-300 hover:border-gray-400 transition-all">
-          <img 
-            src="/video-thumbnail-4.webp" 
-            alt="Video 4"
-            className="w-full h-full object-cover"
-          />
-        </button>
-        
-        <button className="flex-1 aspect-video rounded border-2 border-dashed border-gray-300 hover:border-gray-400 flex items-center justify-center transition-colors bg-white">
+        {/* Add More Button */}
+        <button className="flex-1 aspect-video rounded-lg border-2 border-dashed border-gray-300 hover:border-gray-400 flex items-center justify-center transition-colors bg-white">
           <span className="text-2xl text-gray-400">+</span>
         </button>
       </div>

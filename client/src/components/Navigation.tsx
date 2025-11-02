@@ -50,7 +50,10 @@ export default function Navigation() {
           </div>
 
           {/* Log In Button */}
-          <Button variant="outline" className="bg-transparent h-9 text-sm">
+          <Button 
+            variant="outline" 
+            className="bg-transparent border-purple-200 text-purple-600 hover:bg-purple-50 hover:border-purple-300 h-9 px-4 text-sm font-medium transition-colors"
+          >
             Log In
           </Button>
         </div>

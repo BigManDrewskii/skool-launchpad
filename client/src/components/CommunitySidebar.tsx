@@ -20,7 +20,7 @@ export default function CommunitySidebar() {
   return (
     <div className="space-y-4">
       {/* Community Card */}
-      <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+      <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
         {/* Banner - Real Image, NO GRADIENT */}
         <div className="h-20 bg-black overflow-hidden">
           <img 
@@ -53,9 +53,9 @@ export default function CommunitySidebar() {
               <a
                 key={index}
                 href="#"
-                className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-900 transition-colors group"
+                className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700 transition-colors"
               >
-                <ArrowTopRightOnSquareIcon className="w-3.5 h-3.5" />
+                <ArrowTopRightOnSquareIcon className="w-3 h-3" />
                 <span>{link}</span>
               </a>
             ))}
@@ -90,7 +90,7 @@ export default function CommunitySidebar() {
           </div>
 
           {/* CTA Button - Solid Yellow/Gold Color */}
-          <Button className="w-full bg-[#F4D03F] hover:bg-[#F5C842] text-black font-semibold text-sm h-10 border-0">
+          <Button className="w-full bg-[#F4D03F] hover:bg-[#E8C636] text-black font-semibold text-sm h-10 border-0 rounded-lg transition-colors">
             JOIN GROUP
           </Button>
         </div>
