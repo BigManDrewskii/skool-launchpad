@@ -14,8 +14,8 @@ export default function PaymentModal({ isOpen, onClose, paymentType }: PaymentMo
   useEffect(() => {
     if (isOpen && paymentType === "card") {
       // Initialize Polar checkout
-      // TODO: Replace with your actual Polar checkout link
-      const polarCheckoutLink = "https://polar.sh/checkout/YOUR_CHECKOUT_LINK_HERE";
+      // Polar checkout link for The Skool Launchpad ($2,997)
+      const polarCheckoutLink = "https://buy.polar.sh/polar_cl_s57XH9P3BT58XVeiaQsMOvLeJNCzD70vAJy2s46IhRn";
       
       PolarEmbedCheckout.create(polarCheckoutLink, "light")
         .then((checkout) => {
@@ -55,34 +55,48 @@ export default function PaymentModal({ isOpen, onClose, paymentType }: PaymentMo
 
   const handleCryptoPayment = async () => {
     try {
-      // TODO: Replace with your actual NOWPayments API integration
-      // This is a placeholder - you'll need to:
-      // 1. Create an invoice via NOWPayments API
-      // 2. Get the invoice URL
-      // 3. Redirect user to the invoice URL
+      // Coinbase Commerce integration
+      // Create a charge via Coinbase Commerce API
+      const apiKey = import.meta.env.VITE_COINBASE_COMMERCE_API_KEY;
       
-      const response = await fetch("https://api.nowpayments.io/v1/invoice", {
+      if (!apiKey) {
+        console.error("Coinbase Commerce API key not configured");
+        alert("Payment system not configured. Please contact support.");
+        onClose();
+        return;
+      }
+      
+      const response = await fetch("https://api.commerce.coinbase.com/charges", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": "YOUR_NOWPAYMENTS_API_KEY", // TODO: Add your API key
+          "X-CC-Api-Key": apiKey,
+          "X-CC-Version": "2018-03-22",
         },
         body: JSON.stringify({
-          price_amount: 2997,
-          price_currency: "usd",
-          order_id: `skool-launchpad-${Date.now()}`,
-          order_description: "The Skool Launchpad - Done-for-you Skool Community Setup",
-          success_url: `${window.location.origin}/payment-success`,
+          name: "The Skool Launchpad",
+          description: "Done-for-you Skool Community Setup - Professional branding, setup, and sales funnel in 10 days",
+          pricing_type: "fixed_price",
+          local_price: {
+            amount: "2997.00",
+            currency: "USD",
+          },
+          metadata: {
+            customer_id: `customer-${Date.now()}`,
+            order_id: `skool-launchpad-${Date.now()}`,
+          },
+          redirect_url: `${window.location.origin}/payment-success`,
           cancel_url: `${window.location.origin}/payment-cancelled`,
         }),
       });
 
       if (response.ok) {
         const data = await response.json();
-        // Redirect to NOWPayments invoice page
-        window.location.href = data.invoice_url;
+        // Redirect to Coinbase Commerce hosted checkout page
+        window.location.href = data.data.hosted_url;
       } else {
-        console.error("Failed to create crypto invoice");
+        const errorData = await response.json();
+        console.error("Failed to create Coinbase Commerce charge:", errorData);
         alert("Failed to create payment. Please try again.");
         onClose();
       }

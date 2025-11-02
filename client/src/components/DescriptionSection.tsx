@@ -106,7 +106,7 @@ export default function DescriptionSection() {
             Pay with Card / Apple Pay
           </button>
 
-          {/* Crypto Payment Button (NOWPayments) */}
+          {/* Crypto Payment Button (Coinbase Commerce) */}
           <button
             onClick={handleCryptoPayment}
             className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 text-black dark:text-white font-semibold rounded-lg border-2 border-black dark:border-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
@@ -117,7 +117,7 @@ export default function DescriptionSection() {
         </div>
 
         <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-          Secure payment processing • 300+ cryptocurrencies accepted • Apple Pay & Google Pay supported
+          Secure payment processing • Crypto via Coinbase Commerce (non-custodial) • Apple Pay & Google Pay supported
         </p>
       </div>
 

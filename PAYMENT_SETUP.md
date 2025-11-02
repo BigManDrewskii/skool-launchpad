@@ -1,188 +1,221 @@
 # Payment Integration Setup Guide
 
-This guide will help you set up both Polar (traditional payments + Apple Pay) and NOWPayments (crypto) for The Skool Launchpad.
+This guide explains how to set up payment processing for The Skool Launchpad landing page using **Polar** (for card/Apple Pay) and **Coinbase Commerce** (for cryptocurrency payments).
 
 ## Overview
 
-The landing page now includes two payment options:
-1. **Pay with Card / Apple Pay** - Powered by Polar
-2. **Pay with Crypto** - Powered by NOWPayments
+The landing page supports two payment methods:
 
-## Step 1: Set Up Polar (Traditional Payments)
+1. **Polar** - Traditional payments (credit/debit cards, Apple Pay, Google Pay)
+2. **Coinbase Commerce** - Cryptocurrency payments (Bitcoin, Ethereum, USDC, and 100+ other cryptocurrencies)
 
-### Create Polar Account
-1. Go to https://polar.sh
-2. Sign up using GitHub, Google, or email
-3. Create an organization (e.g., "Studio Drewskii")
+Both integrations use hosted checkout pages, meaning customers are redirected to secure payment pages hosted by Polar and Coinbase Commerce respectively.
 
-### Create Product
-1. Navigate to Dashboard → Products
-2. Click "Create Product"
-3. Fill in details:
-   - **Name**: The Skool Launchpad
-   - **Description**: Done-for-you Skool community setup in 10 days
-   - **Price**: $2,997 (one-time payment)
-   - **Type**: One-time purchase
+---
 
-### Generate Checkout Link
-1. After creating the product, click "Create Checkout Link"
-2. Copy the checkout link (looks like: `https://polar.sh/checkout/abc123...`)
-3. You'll need to add this to your environment variables
+## 1. Polar Integration (Card / Apple Pay)
 
-### Enable Apple Pay (Optional but Recommended)
-1. Email Polar support at support@polar.sh with:
-   - Your organization slug
-   - Your domain (e.g., `yoursite.manus.space`)
-2. They will verify your domain for wallet payments
-
-## Step 2: Set Up NOWPayments (Crypto)
-
-### Create NOWPayments Account
-1. Go to https://nowpayments.io
-2. Click "Get started" and create an account
-3. Complete email verification
-
-### Get API Key
-1. Log in to NOWPayments dashboard
-2. Navigate to Settings → API Keys
-3. Generate a new API key
-4. Copy the API key (starts with something like `ABC123...`)
-
-### Configure IPN (Webhooks) - Optional
-1. In NOWPayments dashboard, go to Settings → IPN
-2. Set IPN callback URL to: `https://yoursite.manus.space/api/webhooks/nowpayments`
-3. Generate and save IPN Secret key
-4. Set number of recurrent notifications: 3
-5. Set timeout: 1 minute
-
-## Step 3: Add Environment Variables
-
-You'll need to add these environment variables through the Manus interface:
-
-### Required Variables:
-- `VITE_POLAR_CHECKOUT_LINK` - Your Polar checkout link
-- `VITE_NOWPAYMENTS_API_KEY` - Your NOWPayments API key
-
-### Optional Variables:
-- `NOWPAYMENTS_IPN_SECRET` - For webhook verification (if using webhooks)
-
-## Step 4: Update Code with Your Credentials
-
-### Update PaymentModal.tsx
-
-Find this line (around line 15):
-```typescript
-const polarCheckoutLink = "https://polar.sh/checkout/YOUR_CHECKOUT_LINK_HERE";
+### Current Status
+✅ **Already configured** with your checkout link:
+```
+https://buy.polar.sh/polar_cl_s57XH9P3BT58XVeiaQsMOvLeJNCzD70vAJy2s46IhRn
 ```
 
-Replace with:
-```typescript
-const polarCheckoutLink = import.meta.env.VITE_POLAR_CHECKOUT_LINK;
-```
+### How It Works
+1. User clicks "Pay with Card / Apple Pay" button
+2. Polar embedded checkout modal opens
+3. User completes payment with card or Apple Pay
+4. On success, user is redirected to `/payment-success`
+5. On cancel, modal closes
 
-Find this line (around line 55):
-```typescript
-"x-api-key": "YOUR_NOWPAYMENTS_API_KEY",
-```
+### Fees
+- **4% + $0.40** per transaction
+- No monthly fees
+- Polar handles all tax compliance globally
 
-Replace with:
-```typescript
-"x-api-key": import.meta.env.VITE_NOWPAYMENTS_API_KEY,
-```
+### Testing
+- The checkout link is already integrated in `PaymentModal.tsx`
+- Test by clicking the "Pay with Card / Apple Pay" button
+- Use Polar's test mode for development
 
-## Step 5: Testing
+---
 
-### Test Polar (Sandbox Mode)
-1. Polar automatically provides test mode
-2. Click "Pay with Card / Apple Pay" button
-3. Use test card: `4242 4242 4242 4242`
-4. Any future expiry date and CVC
+## 2. Coinbase Commerce Integration (Crypto)
 
-### Test NOWPayments (Sandbox Mode)
-1. NOWPayments provides a sandbox environment
-2. Use sandbox API endpoint: `https://api-sandbox.nowpayments.io/v1/`
-3. Get sandbox API key from dashboard
-4. Test with small amounts of testnet crypto
+### Setup Required
+You need to create a Coinbase Commerce account and get an API key.
 
-## Step 6: Go Live
+### Step 1: Create Coinbase Commerce Account
+1. Go to https://commerce.coinbase.com
+2. Sign up with your email
+3. Complete verification (no KYC required for merchants)
 
-### Polar
-1. Ensure your product is published
-2. Verify checkout link is active
-3. Test with a real small payment first
+### Step 2: Get API Key
+1. Log in to Coinbase Commerce dashboard
+2. Go to **Settings** → **API Keys**
+3. Click **Create an API Key**
+4. Copy the API key (starts with a long string)
+5. **IMPORTANT**: Save it securely - you won't be able to see it again
 
-### NOWPayments
-1. Switch from sandbox to production API endpoint
-2. Use production API key
-3. Configure your outcome wallet (where you want to receive funds)
-4. Test with a small real crypto payment first
+### Step 3: Add API Key to Manus
+1. In Manus, go to **Management UI** → **Settings** → **Secrets**
+2. Add a new secret:
+   - **Key**: `VITE_COINBASE_COMMERCE_API_KEY`
+   - **Value**: Your Coinbase Commerce API key
+3. Save the secret
 
-## Payment Flow
-
-### Card / Apple Pay (Polar)
-1. User clicks "Pay with Card / Apple Pay"
-2. Polar embedded checkout opens
-3. User completes payment (card details or Apple Pay)
-4. Polar processes payment and handles tax compliance
-5. User redirected to `/payment-success`
-6. You receive webhook notification from Polar
-
-### Crypto (NOWPayments)
-1. User clicks "Pay with Crypto"
-2. System creates invoice via NOWPayments API
-3. User redirected to NOWPayments invoice page
+### How It Works
+1. User clicks "Pay with Crypto" button
+2. App creates a charge via Coinbase Commerce API
+3. User is redirected to Coinbase Commerce hosted checkout page
 4. User selects cryptocurrency and completes payment
-5. NOWPayments processes and converts (if needed)
-6. User redirected to `/payment-success`
-7. You receive IPN callback from NOWPayments
+5. On success, user is redirected to `/payment-success`
+6. On cancel, user is redirected to `/payment-cancelled`
 
-## Fees Comparison
+### Supported Cryptocurrencies
+Coinbase Commerce supports 100+ cryptocurrencies including:
+- Bitcoin (BTC)
+- Ethereum (ETH)
+- USD Coin (USDC)
+- Tether (USDT)
+- Litecoin (LTC)
+- Bitcoin Cash (BCH)
+- Dogecoin (DOGE)
+- And many more...
 
-| Provider | Fee | Notes |
-|----------|-----|-------|
-| **Polar** | 4% + 40¢ | Includes tax compliance (MoR) |
-| **NOWPayments** | 0.5-1% | Plus network fees |
+### Fees
+- **1%** transaction fee
+- No monthly fees
+- **Non-custodial** - Payments go directly to your wallet
 
-## Support
+### Payment Flow
+```
+User clicks "Pay with Crypto"
+    ↓
+App calls Coinbase Commerce API to create charge
+    ↓
+API returns hosted_url
+    ↓
+User redirected to Coinbase Commerce checkout
+    ↓
+User selects crypto and pays
+    ↓
+Payment confirmed on blockchain
+    ↓
+User redirected to success page
+```
 
-- **Polar**: support@polar.sh or https://polar.sh/docs
-- **NOWPayments**: support@nowpayments.io or https://nowpayments.io/help
+---
 
-## Security Notes
+## 3. Webhook Setup (Optional but Recommended)
 
-1. **Never commit API keys** to version control
-2. Use environment variables for all secrets
-3. Verify webhook signatures (IPN for NOWPayments)
-4. Use HTTPS for all payment pages
-5. Test thoroughly before going live
-6. Monitor payment logs regularly
+### Why Webhooks?
+Webhooks allow you to receive real-time notifications when payments are completed, so you can:
+- Automatically provision access to the Skool community
+- Send confirmation emails
+- Update your database
+- Track analytics
 
-## Troubleshooting
+### Polar Webhooks
+1. In Polar dashboard, go to **Webhooks**
+2. Add webhook URL: `https://your-domain.com/api/webhooks/polar`
+3. Select events: `checkout.completed`
+
+### Coinbase Commerce Webhooks
+1. In Coinbase Commerce dashboard, go to **Settings** → **Webhook subscriptions**
+2. Add webhook URL: `https://your-domain.com/api/webhooks/coinbase`
+3. Select events: `charge:confirmed`, `charge:failed`
+
+**Note**: Webhook implementation requires a backend server. Since this is a static site, you can use services like:
+- Zapier
+- Make (formerly Integromat)
+- n8n
+- Custom serverless function (Vercel, Netlify, AWS Lambda)
+
+---
+
+## 4. Testing
+
+### Test Polar Integration
+1. Open the landing page
+2. Click "Pay with Card / Apple Pay"
+3. Polar checkout modal should open
+4. Use test card numbers from Polar documentation
+
+### Test Coinbase Commerce Integration
+1. Ensure `VITE_COINBASE_COMMERCE_API_KEY` is set in Manus Secrets
+2. Open the landing page
+3. Click "Pay with Crypto"
+4. You should be redirected to Coinbase Commerce checkout
+5. Use Coinbase Commerce test mode for development
+
+---
+
+## 5. Going Live
+
+### Checklist
+- [ ] Polar checkout link configured (✅ Already done)
+- [ ] Coinbase Commerce account created
+- [ ] Coinbase Commerce API key added to Manus Secrets
+- [ ] Test both payment flows
+- [ ] Set up webhooks (optional)
+- [ ] Update success/cancelled pages with your branding
+- [ ] Test on mobile devices
+- [ ] Verify payment confirmations work
+
+### Production Considerations
+1. **Polar**: Already in production mode with your checkout link
+2. **Coinbase Commerce**: Ensure you're using production API key (not sandbox)
+3. **SSL**: Ensure your site is served over HTTPS (Manus handles this automatically)
+4. **Error Handling**: Monitor browser console for any payment errors
+5. **Customer Support**: Have a support email ready for payment issues
+
+---
+
+## 6. Troubleshooting
 
 ### Polar Checkout Not Opening
-- Verify checkout link is correct and active
 - Check browser console for errors
-- Ensure @polar-sh/checkout package is installed
+- Ensure `@polar-sh/checkout` package is installed
+- Verify checkout link is correct
 
-### NOWPayments Invoice Creation Fails
-- Verify API key is correct
-- Check API endpoint (sandbox vs production)
-- Ensure price_amount is valid
-- Check NOWPayments dashboard for error logs
+### Coinbase Commerce "Payment system not configured" Error
+- Ensure `VITE_COINBASE_COMMERCE_API_KEY` is set in Manus Secrets
+- Check that the secret key name is exactly `VITE_COINBASE_COMMERCE_API_KEY`
+- Restart the dev server after adding secrets
 
-### Webhooks Not Receiving
-- Verify webhook URL is publicly accessible
-- Check webhook signature verification
-- Review webhook logs in provider dashboards
-- Ensure webhook endpoint is properly configured
+### Payment Success Page Not Showing
+- Ensure `/payment-success` and `/payment-cancelled` routes exist in `App.tsx`
+- Check that redirect URLs are correct
 
-## Next Steps
+### CORS Errors
+- Coinbase Commerce API should not have CORS issues (server-side API)
+- If you see CORS errors, you may need a backend proxy
 
-1. Set up both payment provider accounts
-2. Add environment variables
-3. Update code with credentials
-4. Test in sandbox/test mode
-5. Verify success/failure pages work
-6. Set up webhook endpoints (optional but recommended)
-7. Go live with real payments
-8. Monitor transactions and customer feedback
+---
+
+## 7. Support
+
+### Polar Support
+- Documentation: https://docs.polar.sh
+- Support: support@polar.sh
+
+### Coinbase Commerce Support
+- Documentation: https://docs.cdp.coinbase.com/commerce
+- Support: https://help.coinbase.com/en/commerce
+
+### Manus Support
+- For issues with Manus integration, contact Manus support
+
+---
+
+## Summary
+
+You now have a complete payment system with:
+- ✅ **Polar** for traditional payments (4% + $0.40 fee)
+- ✅ **Coinbase Commerce** for crypto payments (1% fee, non-custodial)
+- ✅ Hosted checkout pages (no PCI compliance needed)
+- ✅ Success/failure redirect pages
+- ✅ Professional payment UX
+
+**Next step**: Create your Coinbase Commerce account and add the API key to Manus Secrets to activate crypto payments!
