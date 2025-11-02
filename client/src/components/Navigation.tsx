@@ -75,7 +75,7 @@ export default function Navigation() {
   }, [typedText, isDeleting, currentPlatformIndex, platforms]);
 
   return (
-    <nav className="border-b border-border bg-background sticky top-0 z-50">
+    <nav className="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 sticky top-0 z-50 transition-colors">
       <div className="container">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
@@ -91,17 +91,17 @@ export default function Navigation() {
           <div className="flex-1 max-w-md mx-8">
             <Popover open={isOpen} onOpenChange={setIsOpen}>
               <PopoverTrigger asChild>
-                <button className="w-full px-4 py-2 text-sm text-left bg-gray-50 border border-gray-200 rounded-md hover:bg-white hover:border-gray-300 transition-all flex items-center gap-2">
-                  <MagnifyingGlassIcon className="w-4 h-4 text-gray-400" />
-                  <span className="text-gray-900 font-mono">
+                <button className="w-full px-4 py-2 text-sm text-left bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md hover:bg-white dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all flex items-center gap-2">
+                  <MagnifyingGlassIcon className="w-4 h-4 text-gray-400 dark:text-gray-500" />
+                  <span className="text-gray-900 dark:text-gray-100 font-mono">
                     {typedText}
                     <span className="animate-pulse">|</span>
                   </span>
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="w-80 p-0 bg-white border border-gray-200 shadow-lg" align="center">
-                <div className="p-4 border-b border-gray-100">
-                  <h3 className="font-semibold text-sm text-gray-900">
+              <PopoverContent className="w-80 p-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg" align="center">
+                <div className="p-4 border-b border-gray-100 dark:border-gray-700">
+                  <h3 className="font-semibold text-sm text-gray-900 dark:text-white">
                     Connect with me
                   </h3>
                 </div>
@@ -112,17 +112,17 @@ export default function Navigation() {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-start gap-3 p-3 rounded-md hover:bg-gray-50 transition-colors group"
+                      className="flex items-start gap-3 p-3 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group"
                     >
                       <div className="flex-1">
-                        <div className="font-medium text-sm text-gray-900 group-hover:text-black">
+                        <div className="font-medium text-sm text-gray-900 dark:text-white group-hover:text-black dark:group-hover:text-white">
                           {link.name}
                         </div>
-                        <div className="text-xs text-gray-500">
+                        <div className="text-xs text-gray-500 dark:text-gray-400">
                           {link.description}
                         </div>
                       </div>
-                      <svg className="w-4 h-4 text-gray-400 group-hover:text-gray-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>

@@ -6,7 +6,7 @@ import CommunitySidebar from "@/components/CommunitySidebar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors">
       <Navigation />
 
       <main className="container py-6">
@@ -15,14 +15,14 @@ export default function Home() {
           <div className="lg:col-span-2 space-y-5">
             {/* Page Title with Headline */}
             <div className="space-y-2">
-              <h1 className="text-2xl font-bold text-gray-900">The Skool Launchpad</h1>
-              <p className="text-lg font-semibold text-gray-700">
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">The Skool Launchpad</h1>
+              <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">
                 LAUNCH YOUR PROFESSIONAL SKOOL COMMUNITY IN 10 DAYS.
               </p>
             </div>
 
             {/* Video Section */}
-            <div className="bg-card border border-border rounded-xl p-5 shadow-sm">
+            <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5 shadow-sm transition-colors">
               <VideoSection />
             </div>
 
@@ -30,7 +30,7 @@ export default function Home() {
             <MetaInfo />
 
             {/* Description */}
-            <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+            <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-sm transition-colors">
               <DescriptionSection />
             </div>
           </div>
@@ -43,13 +43,13 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border mt-16 bg-card">
+      <footer className="border-t border-gray-200 dark:border-gray-800 mt-16 bg-white dark:bg-gray-900 transition-colors">
         <div className="container py-8">
           <div className="flex items-center justify-between">
             {/* Privacy Link */}
             <a
               href="#"
-              className="text-sm text-gray-500 hover:text-gray-900"
+              className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               Privacy and terms
             </a>
@@ -60,7 +60,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/andreasmichailidis/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-900 transition-colors"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@ export default function Home() {
                 href="https://www.youtube.com/@studiodrewskii"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-900 transition-colors"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 aria-label="YouTube"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -82,7 +82,7 @@ export default function Home() {
                 href="https://t.me/drewskii"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-900 transition-colors"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 aria-label="Telegram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@ export default function Home() {
                 href="https://www.skool.com/ai-design-club"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-900 transition-colors text-sm font-semibold"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm font-semibold"
                 aria-label="Skool"
               >
                 Skool
@@ -102,7 +102,7 @@ export default function Home() {
                 href="https://contra.com/drewskii"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-900 transition-colors text-sm font-semibold"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm font-semibold"
                 aria-label="Contra"
               >
                 Contra

@@ -24,7 +24,7 @@ Built with cutting-edge web technologies for maximum performance and reliability
 
 The page showcases your Skool Launchpad offer with Studio Drewskii branding throughout.
 
-**Navigation** features the Skool Launchpad logo on the left. Click "Connect with me" to open a popover showing all social links including Skool, YouTube, LinkedIn, Telegram, and Contra. Hit the black "Book a Call" button in the top right to start a conversation.
+**Navigation** features the Skool Launchpad logo on the left. Click the moon/sun icon to toggle between light and dark themes - your preference is saved automatically. Click "Connect with me" to open a popover showing all social links including Skool, YouTube, LinkedIn, Telegram, and Contra. Hit the black "Book a Call" button in the top right to start a conversation.
 
 **Main Content** presents your 10-day launch program. Scroll through to see "What you get" including The Brand, The Skool Setup, and The Sales Funnel. Review the three-step process and $2,997 pricing with ROI calculator. Click "Book a Strategy Call" to start.
 
