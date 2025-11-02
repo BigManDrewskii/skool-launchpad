@@ -122,3 +122,9 @@
 - [x] Apply dark mode invert filter to make icons white in dark theme
 - [x] Test both light and dark themes (black in light, white in dark)
 - [x] Save checkpoint
+
+## Phase 16: Footer Icon Consistency
+- [x] Update Skool and Contra icon sizes to match Heroicons (w-5 h-5)
+- [x] Ensure consistent spacing and hover effects across all footer icons
+- [x] Test visual consistency in both light and dark themes
+- [x] Save checkpoint

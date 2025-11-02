@@ -93,26 +93,26 @@ export default function Home() {
                 href="https://www.skool.com/ai-design-club"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-70"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 aria-label="Skool"
               >
                 <img 
                   src="/skoolicon.svg" 
                   alt="Skool" 
-                  className="h-5 w-auto dark:invert dark:brightness-0 dark:contrast-200"
+                  className="w-5 h-5 dark:invert dark:brightness-0 dark:contrast-200"
                 />
               </a>
               <a
                 href="https://contra.com/drewskii"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-70"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 aria-label="Contra"
               >
                 <img 
                   src="/contra-logo.svg" 
                   alt="Contra" 
-                  className="h-5 w-auto dark:invert dark:brightness-0 dark:contrast-200"
+                  className="w-5 h-5 dark:invert dark:brightness-0 dark:contrast-200"
                 />
               </a>
             </div>
