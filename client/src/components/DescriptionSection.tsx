@@ -19,12 +19,12 @@ export default function DescriptionSection() {
     <div className="space-y-5">
       {/* Main Headline */}
       <div className="space-y-3">
-        <h1 className="text-xl font-bold tracking-tight leading-tight">
+        <h1 className="text-xl font-bold tracking-tight leading-tight text-gray-900">
           TRANSFORM YOUR DESIGN PRACTICE INTO A HIGHLY EFFICIENT, HIGHLY
           PROFITABLE AI-POWERED BUSINESS.
         </h1>
 
-        <p className="text-base text-foreground leading-relaxed">
+        <p className="text-base text-gray-900 leading-relaxed">
           Confidently Build AI Workflows that will Support your Most Creative,
           Productive, and Profitable Design Career for Years to Come.
         </p>
@@ -32,11 +32,11 @@ export default function DescriptionSection() {
 
       {/* What's Inside */}
       <div className="space-y-2.5">
-        <h2 className="font-semibold text-foreground text-sm">What's Inside:</h2>
+        <h2 className="font-semibold text-gray-900 text-sm">What's Inside:</h2>
         <ul className="space-y-1.5">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-2 text-foreground text-sm leading-relaxed">
-              <span className="text-muted-foreground mt-1">•</span>
+            <li key={index} className="flex items-start gap-2 text-gray-900 text-sm leading-relaxed">
+              <span className="text-gray-400 mt-1">•</span>
               <span>{feature}</span>
             </li>
           ))}
@@ -46,8 +46,8 @@ export default function DescriptionSection() {
       {/* Benefits */}
       <div className="space-y-1.5">
         {benefits.map((benefit, index) => (
-          <div key={index} className="flex items-start gap-2 text-foreground text-sm leading-relaxed">
-            <ArrowRightIcon className="w-4 h-4 text-muted-foreground mt-1 flex-shrink-0" />
+          <div key={index} className="flex items-start gap-2 text-gray-900 text-sm leading-relaxed">
+            <ArrowRightIcon className="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
             <span>{benefit}</span>
           </div>
         ))}
@@ -57,7 +57,7 @@ export default function DescriptionSection() {
       <div className="pt-1">
         <a
           href="#"
-          className="text-primary hover:underline font-medium inline-block text-sm"
+          className="text-blue-600 hover:underline font-medium inline-block text-sm"
         >
           Join FREE
         </a>

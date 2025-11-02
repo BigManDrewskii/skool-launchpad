@@ -6,7 +6,7 @@ import CommunitySidebar from "@/components/CommunitySidebar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-50">
       <Navigation />
 
       <main className="container py-6">
@@ -14,10 +14,10 @@ export default function Home() {
           {/* Main Content - Left Column */}
           <div className="lg:col-span-2 space-y-5">
             {/* Page Title */}
-            <h1 className="text-xl font-bold text-foreground">AI Design Club</h1>
+            <h1 className="text-xl font-bold text-gray-900">AI Design Club</h1>
 
             {/* Video Section */}
-            <div className="bg-card border border-border rounded-lg p-5">
+            <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
               <VideoSection />
             </div>
 
@@ -25,7 +25,7 @@ export default function Home() {
             <MetaInfo />
 
             {/* Description */}
-            <div className="bg-card border border-border rounded-lg p-6">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
               <DescriptionSection />
             </div>
           </div>
@@ -38,11 +38,11 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border mt-16">
+      <footer className="border-t border-gray-200 mt-16 bg-white">
         <div className="container py-6">
           <a
             href="#"
-            className="text-sm text-muted-foreground hover:text-foreground"
+            className="text-sm text-gray-500 hover:text-gray-900"
           >
             Privacy and terms
           </a>

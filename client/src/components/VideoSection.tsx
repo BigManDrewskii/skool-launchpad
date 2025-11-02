@@ -1,17 +1,16 @@
 import { PlayIcon, BoltIcon } from "@heroicons/react/24/solid";
 
 export default function VideoSection() {
-  const thumbnails = [
-    { id: 1, color: "bg-red-900" },
-    { id: 2, color: "bg-yellow-700" },
-    { id: 3, color: "bg-blue-900" },
-    { id: 4, color: "bg-gray-800" },
-  ];
-
   return (
     <div className="space-y-3">
       {/* Main Video Player */}
-      <div className="relative aspect-video bg-gradient-to-br from-gray-700 to-gray-900 rounded overflow-hidden">
+      <div className="relative aspect-video bg-black rounded overflow-hidden">
+        <img 
+          src="/main-video-thumbnail.webp" 
+          alt="Main video"
+          className="w-full h-full object-cover"
+        />
+        
         {/* Play Button Overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
           <button className="w-16 h-16 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-colors group">
@@ -29,7 +28,7 @@ export default function VideoSection() {
           </div>
           <div className="h-4 w-px bg-white/30" />
           <div className="flex items-center gap-2 text-white text-sm">
-            <span className="text-muted-foreground">5 min</span>
+            <span className="text-gray-400">5 min</span>
             <BoltIcon className="w-4 h-4 text-yellow-400" />
             <span>3 min 54 sec</span>
           </div>
@@ -38,26 +37,43 @@ export default function VideoSection() {
 
       {/* Video Thumbnails */}
       <div className="flex gap-2">
-        {thumbnails.map((thumb, index) => (
-          <button
-            key={thumb.id}
-            className={`relative flex-1 aspect-video rounded overflow-hidden border-2 transition-all ${
-              index === 0
-                ? "border-primary"
-                : "border-border hover:border-muted-foreground"
-            }`}
-          >
-            <div className={`w-full h-full ${thumb.color}`}>
-              {index === 0 && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <PlayIcon className="w-8 h-8 text-white/80" />
-                </div>
-              )}
-            </div>
-          </button>
-        ))}
-        <button className="flex-1 aspect-video rounded border-2 border-dashed border-border hover:border-muted-foreground flex items-center justify-center transition-colors">
-          <span className="text-2xl text-muted-foreground">+</span>
+        <button className="relative flex-1 aspect-video rounded overflow-hidden border-2 border-black transition-all">
+          <img 
+            src="/video-thumbnail-1.webp" 
+            alt="Video 1"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <PlayIcon className="w-8 h-8 text-white/80" />
+          </div>
+        </button>
+        
+        <button className="relative flex-1 aspect-video rounded overflow-hidden border-2 border-gray-300 hover:border-gray-400 transition-all">
+          <img 
+            src="/video-thumbnail-2.webp" 
+            alt="Video 2"
+            className="w-full h-full object-cover"
+          />
+        </button>
+        
+        <button className="relative flex-1 aspect-video rounded overflow-hidden border-2 border-gray-300 hover:border-gray-400 transition-all">
+          <img 
+            src="/video-thumbnail-3.webp" 
+            alt="Video 3"
+            className="w-full h-full object-cover"
+          />
+        </button>
+        
+        <button className="relative flex-1 aspect-video rounded overflow-hidden border-2 border-gray-300 hover:border-gray-400 transition-all">
+          <img 
+            src="/video-thumbnail-4.webp" 
+            alt="Video 4"
+            className="w-full h-full object-cover"
+          />
+        </button>
+        
+        <button className="flex-1 aspect-video rounded border-2 border-dashed border-gray-300 hover:border-gray-400 flex items-center justify-center transition-colors bg-white">
+          <span className="text-2xl text-gray-400">+</span>
         </button>
       </div>
     </div>

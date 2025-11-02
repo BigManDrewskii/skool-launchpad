@@ -20,29 +20,30 @@ export default function CommunitySidebar() {
   return (
     <div className="space-y-4">
       {/* Community Card */}
-      <div className="bg-card border border-border rounded-lg overflow-hidden">
-        {/* Banner */}
-        <div className="h-20 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 flex items-center justify-center">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-white">AI</div>
-            <div className="text-xs text-white/80 tracking-wide">DESIGN CLUB</div>
-          </div>
+      <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+        {/* Banner - Real Image, NO GRADIENT */}
+        <div className="h-20 bg-black overflow-hidden">
+          <img 
+            src="/ai-design-club-banner.webp" 
+            alt="AI Design Club"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Content */}
         <div className="p-5 space-y-4">
           {/* Title and URL */}
           <div>
-            <h3 className="font-semibold text-foreground text-base">
+            <h3 className="font-semibold text-gray-900 text-base">
               AI Design Club
             </h3>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-gray-500">
               skool.com/ai-design-club
             </p>
           </div>
 
           {/* Description */}
-          <p className="text-sm text-foreground leading-relaxed">
+          <p className="text-sm text-gray-900 leading-relaxed">
             Master AI Workflows as a Designer. Get Seen More, Get Paid More.
           </p>
 
@@ -52,7 +53,7 @@ export default function CommunitySidebar() {
               <a
                 key={index}
                 href="#"
-                className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors group"
+                className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-900 transition-colors group"
               >
                 <ArrowTopRightOnSquareIcon className="w-3.5 h-3.5" />
                 <span>{link}</span>
@@ -63,16 +64,16 @@ export default function CommunitySidebar() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-2 pt-3">
             <div className="text-center">
-              <div className="text-lg font-bold text-foreground">552</div>
-              <div className="text-xs text-muted-foreground">Members</div>
+              <div className="text-lg font-bold text-gray-900">552</div>
+              <div className="text-xs text-gray-500">Members</div>
             </div>
             <div className="text-center">
-              <div className="text-lg font-bold text-foreground">6</div>
-              <div className="text-xs text-muted-foreground">Online</div>
+              <div className="text-lg font-bold text-gray-900">7</div>
+              <div className="text-xs text-gray-500">Online</div>
             </div>
             <div className="text-center">
-              <div className="text-lg font-bold text-foreground">4</div>
-              <div className="text-xs text-muted-foreground">Admins</div>
+              <div className="text-lg font-bold text-gray-900">4</div>
+              <div className="text-xs text-gray-500">Admins</div>
             </div>
           </div>
 
@@ -88,8 +89,8 @@ export default function CommunitySidebar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm h-10">
+          {/* CTA Button - Solid Yellow/Gold Color */}
+          <Button className="w-full bg-[#F4D03F] hover:bg-[#F5C842] text-black font-semibold text-sm h-10 border-0">
             JOIN GROUP
           </Button>
         </div>
@@ -99,10 +100,10 @@ export default function CommunitySidebar() {
       <div className="text-center">
         <a
           href="#"
-          className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
+          className="text-sm text-gray-500 hover:text-gray-900 inline-flex items-center gap-1"
         >
           Powered by{" "}
-          <span className="font-semibold text-foreground">Skool</span>
+          <span className="font-semibold text-gray-900">Skool</span>
         </a>
       </div>
     </div>

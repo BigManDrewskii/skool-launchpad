@@ -14,7 +14,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="border-b border-border bg-card sticky top-0 z-50">
+    <nav className="border-b border-gray-200 bg-white sticky top-0 z-50">
       <div className="container">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
@@ -34,17 +34,17 @@ export default function Navigation() {
                 />
               </svg>
             </div>
-            <span className="font-semibold text-foreground text-sm">AI Design Club</span>
+            <span className="font-semibold text-gray-900 text-sm">AI Design Club</span>
           </div>
 
           {/* Search */}
           <div className="flex-1 max-w-md mx-8">
             <div className="relative">
-              <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input
                 type="text"
                 placeholder="Search"
-                className="pl-10 bg-muted border-border h-9 text-sm"
+                className="pl-10 bg-gray-100 border-gray-300 h-9 text-sm"
               />
             </div>
           </div>
@@ -62,8 +62,8 @@ export default function Navigation() {
               key={item}
               className={`py-3 px-1 border-b-2 transition-colors text-sm ${
                 index === navItems.length - 1
-                  ? "border-primary text-foreground font-medium"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
+                  ? "border-black text-gray-900 font-medium"
+                  : "border-transparent text-gray-500 hover:text-gray-900"
               }`}
             >
               {item}
