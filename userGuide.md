@@ -1,7 +1,7 @@
 # The Skool Launchpad - User Guide
 
 ## Purpose
-Launch your professional Skool community in 10 days with done-for-you branding, setup, and sales funnel.
+Launch your professional Skool community in 10 days with done-for-you branding, setup, and sales funnel by Studio Drewskii.
 
 ## Access
 Public landing page. $2,997 one-time investment.
@@ -22,13 +22,15 @@ Built with cutting-edge web technologies for maximum performance and reliability
 
 ## Using Your Website
 
-The page showcases your Skool Launchpad offer with three main sections.
+The page showcases your Skool Launchpad offer with Studio Drewskii branding throughout.
 
-**Main Content** presents your 10-day launch program. Scroll through to see "What you get" including The Brand, The Skool Setup, and The Sales Funnel. Review the three-step process and $2,997 pricing. Click "Book a Strategy Call" to start.
+**Navigation** features the Skool Launchpad logo on the left. Click "Connect with me" to open a popover showing all social links including Skool, YouTube, LinkedIn, Telegram, and Contra. Hit the black "Book a Call" button in the top right to start a conversation.
 
-**Video Carousel** displays your work examples. Click any thumbnail below the main video to switch content. The active thumbnail shows a black border.
+**Main Content** presents your 10-day launch program. Scroll through to see "What you get" including The Brand, The Skool Setup, and The Sales Funnel. Review the three-step process and $2,997 pricing with ROI calculator. Click "Book a Strategy Call" to start.
 
-**Sidebar** highlights Studio Drewskii credentials. View stats showing 100+ Brands Shipped, 4+ Years at Game7, and 500+ Designers Taught. Click "AI Design Club (500+ designers)" or "View Portfolio" to explore more. Hit "BOOK A STRATEGY CALL" to connect.
+**Video Carousel** displays four work examples. Click any thumbnail below the main video to switch content. The active thumbnail shows a black border.
+
+**Sidebar** highlights Studio Drewskii credentials with the iconic SD logo in the banner. View stats showing 100+ Brands Shipped, 7+ Years in Design, and 500+ Designers Taught. Read about Andreas Michailidis (Drewskii) and his work at Game7. Hit the yellow "BOOK A STRATEGY CALL" button to connect.
 
 ---
 

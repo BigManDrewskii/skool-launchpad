@@ -76,11 +76,6 @@ export default function VideoSection() {
             )}
           </button>
         ))}
-        
-        {/* Add More Button */}
-        <button className="flex-1 aspect-video rounded-lg border-2 border-dashed border-gray-300 hover:border-gray-400 flex items-center justify-center transition-colors bg-white">
-          <span className="text-2xl text-gray-400">+</span>
-        </button>
       </div>
     </div>
   );

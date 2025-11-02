@@ -21,13 +21,15 @@ export default function MetaInfo() {
         <span>$2,997</span>
       </div>
 
-      {/* Creator */}
+      {/* Creator - Studio Drewskii */}
       <div className="flex items-center gap-2">
-        <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center text-white text-xs font-semibold">
-          A
-        </div>
+        <img
+          src="/studio-drewskii-icon.png"
+          alt="Studio Drewskii"
+          className="w-5 h-5 rounded-full"
+        />
         <span className="text-gray-600">
-          By <span className="text-gray-900">Andreas M</span>
+          By <span className="text-gray-900 font-medium">Studio Drewskii</span>
         </span>
       </div>
     </div>
