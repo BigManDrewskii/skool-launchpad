@@ -135,3 +135,12 @@
 - [x] Remove img tags and filter classes
 - [x] Test in both light and dark themes (all icons match perfectly)
 - [x] Save checkpoint
+
+## Phase 18: Privacy and Terms Page
+- [x] Research standard privacy policy structure for service-based businesses
+- [x] Research standard terms of service structure
+- [x] Create PrivacyTerms page component matching Studio Drewskii aesthetic
+- [x] Add route for /privacy-terms in App.tsx
+- [x] Update footer link to navigate to new page
+- [x] Test page in both light and dark themes (both work perfectly)
+- [x] Save checkpoint

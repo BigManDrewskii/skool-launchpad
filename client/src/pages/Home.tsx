@@ -48,7 +48,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             {/* Privacy Link */}
             <a
-              href="#"
+              href="/privacy-terms"
               className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               Privacy and terms
